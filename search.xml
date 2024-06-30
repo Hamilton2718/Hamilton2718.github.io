@@ -46,28 +46,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/custom.css"/>
-      <url>/css/custom.css</url>
-      
-        <content type="html"><![CDATA[@font-face {    /* 为载入的字体取名字(随意) */    font-family: 'MaShanZheng';    /* 字体文件地址(相对或者绝对路径都可以) */    src: url(\font\MaShanZheng-Regular.ttf);    /* 定义加粗样式(加粗多少) */    font-weight: normal;    /* 定义字体样式(斜体/非斜体) */    font-style: normal;    /* 定义显示样式 */    font-display: block;  }]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>大佬友链聚集地</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -84,6 +62,17 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[<h1>hello</h1>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>大佬友链聚集地</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
