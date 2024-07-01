@@ -46,11 +46,11 @@
     
     
     <entry>
-      <title>大佬友链聚集地</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1>hello</h1>]]></content>
       
     </entry>
     
@@ -68,11 +68,11 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>大佬友链聚集地</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[<h1>hello</h1>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
