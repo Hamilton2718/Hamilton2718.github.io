@@ -59,6 +59,17 @@
     
     
     <entry>
+      <title>大佬友链聚集地</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -75,17 +86,6 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[<h1>hello</h1>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>大佬友链聚集地</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
