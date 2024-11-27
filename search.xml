@@ -45,9 +45,9 @@
       
         <tags>
             
-            <tag> CS </tag>
-            
             <tag> 课外知识 </tag>
+            
+            <tag> CS </tag>
             
         </tags>
       
@@ -226,9 +226,9 @@
       
         <tags>
             
-            <tag> CS </tag>
-            
             <tag> 课外知识 </tag>
+            
+            <tag> CS </tag>
             
         </tags>
       
@@ -240,9 +240,9 @@
     
     
     <entry>
-      <title>大佬友链聚集地</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -262,9 +262,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>大佬友链聚集地</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
