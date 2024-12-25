@@ -4,6 +4,96 @@
   
     
     <entry>
+      <title>电路与电子技术实验Ⅰ</title>
+      <link href="/2024/12/25/dc-experiment/"/>
+      <url>/2024/12/25/dc-experiment/</url>
+      
+        <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><h2 id="电路原理部分">电路原理部分</h2><h3 id="测量误差">测量误差</h3><h4 id="相对误差分类">相对误差分类</h4><p><strong>某值相对误差</strong>：$$ \delta=\frac{|测量值-实际值|}{某值}\times100 % $$<br><strong>引用相对误差</strong>：$$ \gamma=\frac{|测量值-实际值|}{仪表量程（上限-下限）}\times100% $$<br><strong>最大引用误差</strong>：$$ \gamma_m=\frac{\Delta_m}{x_m}\times100%，\gamma\leq a% $$，其中a为等级指数</p><h4 id="直读式数字表的误差表示">直读式数字表的误差表示</h4><p>直读式数字表的误差表示=被测量大小的相对量+固定量+显示误差<img src="image-59.png" alt="alt text"><br><img src="image-60.png" alt="alt text"><br>字误差：字数乘以分辨率<br><img src="image-61.png" alt="alt text"></p><h4 id="有效数字">有效数字</h4><p>从左边第一个非0位到最后一位所包含的数字，最后一位为可疑数字</p><h4 id="仪器误差数据">仪器误差数据</h4><h5 id="数字万用表（3字半）">数字万用表（3字半）</h5><p>电阻测量：<img src="image-62.png" alt="alt text"><br>电容测量：<img src="image-63.png" alt="alt text"><br>电压测量：（仪表输入阻抗10MΩ）<img src="image-64.png" alt="alt text"><br>电流测量：（仪表输入阻抗6mA/600uA/60uA是99Ω，60mA/600mA/10A是0.99欧姆，交流电流档内阻0.99Ω）<br><img src="image-65.png" alt="alt text"></p><h5 id="仪器台上直流电压表">仪器台上直流电压表</h5><p><img src="image-66.png" alt="alt text"></p><h5 id="仪器台上直流电流表">仪器台上直流电流表</h5><p><img src="image-67.png" alt="alt text"></p><h2 id="数电实验">数电实验</h2><h3 id="课程使用芯片介绍：">课程使用芯片介绍：</h3><h4 id="1-74LS161二进制加法计数器">1. 74LS161二进制加法计数器</h4><p><img src="image-2.png" alt="alt text"><br><img src="image.png" alt="alt text"><br>CP：输入的信号；<br>CR：异步清零操作，低电平触发，优先级最高；<br>LD：置数模式（即通过输入数字）优先级第二高，低电平触发，写入3456引脚读取到的数，同步置数（即读取到CP有上升沿）；<br>CTp和CTt：有低电平则进入保持</p><h4 id="2-74LS00与非门芯片">2. 74LS00与非门芯片:</h4><p><img src="image-1.png" alt="alt text"></p><h4 id="3-74LS55与或非门芯片">3. 74LS55与或非门芯片</h4><p><img src="image-55.png" alt="alt text"></p><h4 id="4-74LS74型双D触发器">4. 74LS74型双D触发器</h4><p><img src="image-51.png" alt="alt text"></p><p><img src="image-52.png" alt="alt text"></p><h4 id="5-74LS107双JK触发器">5. 74LS107双JK触发器</h4><p><img src="image-53.png" alt="alt text"></p><p><img src="image-54.png" alt="alt text"><br>!!!<br><em><strong>数码管显示数字原理:</strong></em> 用四个二进制的高低电平表示一个不大于10的数，四个位由高到低分为Q<sub>D</sub>、Q<sub>C</sub>、Q<sub>B</sub>、Q<sub>A</sub>。</p><h4 id="6-74LS11三输入与门芯片">6. 74LS11三输入与门芯片</h4><p><img src="image-58.png" alt="alt text"></p><h3 id="Quartus文件名后缀">Quartus文件名后缀</h3><table><thead><tr><th>后缀</th><th>全称</th></tr></thead><tbody><tr><td>.bdf</td><td>Block Design File</td></tr><tr><td>.bsf</td><td>Block Symbol File</td></tr><tr><td>.qpf</td><td>Quartus Projct Flie</td></tr><tr><td>.vhd</td><td>VHDL Design File</td></tr><tr><td>.vwf</td><td>Waveform.File</td></tr><tr><td>.sof</td><td>编译后产生的、将下载到FPGA中的文件的</td></tr></tbody></table><h3 id="数字式计时器电路：">数字式计时器电路：</h3><h4 id="1-60进制：">1. 60进制：</h4><p>分为个位数码管和十位数码管，个位数码管10进制，十位数码管6进制。个位计时器当计数到10（二进制1010）时，CR置0，所以就需要一个与非门对Q<sub>B</sub>和Q<sub>D</sub>取与非。<br><img src="image-3.png" alt="alt text"></p><h4 id="2-24进制：">2. 24进制：</h4><p>个位数码管部分基本不改动，但十位的CR需要在计时达到24（即二进制0100 0010）时置0。<img src="image-4.png" alt="alt text"></p><h3 id="全加器">全加器</h3><p><img src="image-68.png" alt="alt text"><br><img src="image-69.png" alt="alt text"></p><h3 id="历年题">历年题</h3><p><strong>注意：记得检查自启动！！！</strong></p><ol><li class="lvl-3"><p>首先需要做出110-&gt;101-&gt;100-&gt;011-&gt;010-&gt;110五个三位二进制循环，输入1HZ信号，将三位输出接入数码管 再做出三位奇偶校验器并接入前面循环的输出，接到发光二极管上，要求在4和2时亮，6, 5, 3时灭 最后将时钟脉冲接入示波器CH1，奇偶校验器结果接入示波器CH2，并将时钟换成1024HZ<br>验收要求是<br>(1) 1HZ时观察6，5，4，3，2循环是否正确，奇偶校验器是否正常工作<br>(2) 1024HZ时，示波器上半部分显示CH1波形，下班部分显示CH2波形，要求显示两个周期左右，保证波形稳定做法：对减法计数器取反可得加法计数器，用161反馈置数法做出1——5循环再取反，奇偶校验器不用直接列异或表达式，可以只考虑出现的情况画卡诺图列真值表</p></li><li class="lvl-3"><p>时序电路设计，要求给定输入X与时钟信号CP，输出为Q0Q1Q2，X=0时输出4→5→6→4……的序列，X=1时输出0→1→2→0……的序列（1）X接逻辑开关，CP接1Hz脉冲，用数码管显示结果。（2）CP接1024Hz脉冲，用示波器显示稳定的图像，要求CH1接Q1，CH2接Q0。做法：用161做出3进制计数器，再将X取反接到数码管。这个思路很妙，不知道是怎么想到的。</p></li><li class="lvl-3"><p>电路实现010-011-100-101-110（搭完此电路，可以先用LED灯给老师验收） 以上述作为输出，进一步搭建奇偶判断电路或者能否被3整除的电路，用示波器观测输入与输出波形做法：常规的反馈计数法的加法计数器</p></li><li class="lvl-3"><p>利用JK触发器和与非门芯片，实现信号发生器，其能重复输出10011101信号，并完成连线做法：先搭000-111的八进制计数器，再画卡诺图列出输出信号的逻辑表达式进行译码。</p></li></ol><h3 id="VHDL语言">VHDL语言</h3><h4 id="基本结构">基本结构</h4><p><img src="image-20.png" alt="alt text"></p><ul class="lvl-0"><li class="lvl-2"><p>LIBRARY:LIBRARY 语句声明库，常用ieee；</p></li><li class="lvl-2"><p>PACKAGE：USE 语句声明程序包，以下为ieee标准库所包含的程序包：<img src="image-21.png" alt="alt text"></p></li><li class="lvl-2"><p>ENTITY： 使用<code>ENTITY decode IS</code>定义，定义结束用<code>END decode</code>实体,用于确定设计的输入/输出；</p></li><li class="lvl-2"><p>ARCHITECTURE：语法如下图：用于规定实体的内部结构或实体行为，相当于main函数；<br><img src="image-22.png" alt="alt text"></p></li></ul><h4 id="语法">语法</h4><h5 id="标识符">标识符</h5><p>由英文字母大小写、数字和“_”组成</p><p>!!! WARNING<br><em><strong>大小写不区分，关键字不能做标识符;一定以英文字母开头;下划线不能连用也不能放结尾</strong></em></p><h5 id="数据对象">数据对象</h5><p>分类：端口（PORT）、信号（SIGNAL）、变量（VARIALBE）、常量（CONSTANT）</p><ul class="lvl-0"><li class="lvl-2"><p>PORT：语法如下：<br><img src="image-23.png" alt="alt text"><br><img src="image-24.png" alt="alt text"></p></li><li class="lvl-2"><p>SIGNAL：<img src="image-26.png" alt="alt text"></p></li><li class="lvl-2"><p>VARIABLE：<img src="image-25.png" alt="alt text"></p></li><li class="lvl-2"><p>CONSTANT：<img src="image-27.png" alt="alt text"></p></li></ul><h5 id="数据类型">数据类型</h5><h6 id="标准定义的数据类型：">标准定义的数据类型：</h6><p><img src="image-28.png" alt="alt text"></p><h6 id="IEEE预定义的数据类型：">IEEE预定义的数据类型：</h6><p><img src="image-29.png" alt="alt text"></p><h5 id="运算符">运算符</h5><h6 id="算术运算符">算术运算符</h6><p><img src="image-30.png" alt="alt text"></p><h6 id="关系运算符">关系运算符</h6><p><img src="image-31.png" alt="alt text"></p><h6 id="逻辑运算符">逻辑运算符</h6><p><img src="image-32.png" alt="alt text"></p><h6 id="连接运算符">连接运算符</h6><p><img src="image-33.png" alt="alt text"></p><h6 id="注释语法">注释语法</h6><p><code>--</code>开头，到本行结束为止</p><h5 id="属性">属性</h5><p>关于实体、结构体、类型及信号的一些特征<br><img src="image-38.png" alt="alt text"><br><img src="image-34.png" alt="alt text"></p><h5 id="顺序语句">顺序语句</h5><p>分类：<code>IF_THEN_ELSE</code>、<code>CASE_WHEN</code>、<code>FOR_LOOP</code>、<code>NULL</code></p><h6 id="IF-THEN-ELSE：">IF_THEN_ELSE：</h6><p><img src="image-36.png" alt="alt text"></p><h6 id="CASE-WHEN：">CASE_WHEN：</h6><p><img src="image-37.png" alt="alt text"><br><img src="image-39.png" alt="alt text"></p><h6 id="FOR-LOOP：">FOR_LOOP：</h6><p><img src="image-40.png" alt="alt text"></p><h6 id="NULL：">NULL：</h6><p><img src="image-41.png" alt="alt text"></p><h5 id="并行语句">并行语句</h5><p><img src="image-42.png" alt="alt text"></p><h5 id="敏感信号">敏感信号</h5><p>Conception：进程中一些被关注的信号，只有当其中的某个信号变化时，该进程才被执行；<img src="image-43.png" alt="alt text"></p><h5 id="并行信号赋值">并行信号赋值</h5><p><img src="image-44.png" alt="alt text"><br><img src="image-45.png" alt="alt text"></p><h4 id="实例">实例</h4><p>设计一个异步清零、同步置数、带计数使能和进位输出的60进制BCD码计数器。<img src="image-46.png" alt="alt text"><br>代码实例：<img src="image-47.png" alt="alt text"><br><img src="image-48.png" alt="alt text"><br><img src="image-49.png" alt="alt text"><br><img src="image-50.png" alt="alt text"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课程总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数电 </tag>
+            
+            <tag> 电路原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>robot</title>
+      <link href="/2024/12/08/robot/"/>
+      <url>/2024/12/08/robot/</url>
+      
+        <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><h2 id="旋转矩阵">旋转矩阵</h2><h3 id="定义">定义</h3><p><img src="image.png" alt="alt text"><br>符号指的是下标frame相对于上标frame<br>用于描述一个frame相对于另一个frame的姿态。即body frame坐标轴在world frame坐标轴下的投影，每一column相当于body frame的是三个基向量在A frame里的坐标。由于点乘的可交换性，有：<br><img src="image-1.png" alt="alt text"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>probability</title>
+      <link href="/2024/11/28/probability/"/>
+      <url>/2024/11/28/probability/</url>
+      
+        <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课程资料 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Analogue Circuit</title>
+      <link href="/2024/11/28/Circuit/"/>
+      <url>/2024/11/28/Circuit/</url>
+      
+        <content type="html"><![CDATA[<h2 id="半导体器件概论">半导体器件概论</h2><h3 id="1-本征半导体：">1. 本征半导体：</h3><p><strong>半导体</strong>：介于导体和绝缘体之间的一类物质（既没有导体能导也没有绝缘体绝缘）以Si为例，因其最外层4电子能互相形成稳定的价电子结构，所以纯Si导电性能不好<br><strong>本征激发</strong>：由于电子的热运动，若我们对其加上一个能量（如加热），可以使部分电子获得能量后挣脱共价键束缚形成自由电子，这个过程称为<em>本征激发</em><br><strong>复合</strong>：相当于本征激发的逆过程，空穴与自由电子湮灭形成价电子</p><blockquote><p><em><strong>在本征半导体中，随着温度的升高，载流子浓度上升，但达到一定温度后浓度基本不变，即复合与本征激发达到动态平衡。</strong></em></p></blockquote><h3 id="2-杂质半导体">2. 杂质半导体</h3><ul class="lvl-0"><li class="lvl-2"><p>N型半导体（掺入P）多出自由电子</p></li><li class="lvl-2"><p>P型半导体（掺入B）多出空穴</p></li></ul><blockquote><p><em><strong>当温度变化时，对杂质半导体内的多子浓度影响不大，但对少子影响大，所以因为少子基数小，所以部分以少子为载流子的半导体会对温度很敏感</strong></em></p></blockquote><h3 id="3-PN结">3. PN结</h3><h4 id="3-1-基本概念：">3.1 基本概念：</h4><p>将P和N型半导体掺一起时，如下图<br><img src="image-5.png" alt="alt text"><br><strong>扩散运动</strong>：多子向另一边的运动，自由电子去P区，空穴去N区迅速复合，在交界区形成空间电荷区形成一个电场阻碍剩余的扩散运动，这个区域称为<strong>耗尽层</strong>或<strong>PN结(junction)</strong><br><strong>漂移运动</strong>：耗尽层相当于在两区交界处产生了相对于多子的势垒，但多子中少数能量较高的仍然能穿越势垒，但少子却能在空间电荷区加速飘过，这运动称为<strong>漂移运动</strong>，最终与多子的扩散运动平衡<em>当两边载流子浓度不一样时称为不对称结</em></p><h4 id="3-2-单向导电性：">3.2 单向导电性：</h4><p>与内电场反方向的外电场（从P到N）加上之后可以抵消内电场的作用，适当恢复扩散运动，但反向没用，从而实现单向导电但也容易想到反向电压其实是在增强少子的漂移运动的，但囿于少子的浓度，这个反向电流很小，我们称为<strong>反向饱和电流</strong></p><h4 id="3-3-伏安曲线">3.3 伏安曲线</h4><p><img src="image-6.png" alt="alt text"><br>曲线为<br>$$I=I_{s}(e^{\frac{U}{U_{T}}}-1) $$<br>其中Is为反向饱和电流，V<sub>T</sub>为温度当量，室温下约为26mV，由于U为正时U/U<sub>T</sub>较大，所以-1可以忽略不计；当U-&gt;负无穷时，I=-I<sub>S</sub>。一般来说Si管的导通压降为0.6-0.8V，Ge管为0.2-0.3V</p><h3 id="4-二极管">4. 二极管</h3><h3 id="5-双极晶体管（BJT，Bipolar-Junction-Transistor）">5. 双极晶体管（BJT，Bipolar Junction Transistor）</h3><h4 id="5-1-结构">5.1 结构</h4><p><img src="image-7.png" alt="alt text"></p><p>!!! note<br><em>c-collector，b-basic，e-emit</em></p><p>!!! Caution<br><strong>发射区的掺杂浓度最高因为它要对外发射载流子；集电区的掺杂浓度小但面积大，就像一个仓库</strong></p><p>!!! Caution<br><strong>标识符号中箭头表示PN结方向,可通过箭头方向判断是NPN型还是PNP型</strong></p><h3 id="6-场效应管（FET，Field-Effect-Transistor）">6. 场效应管（FET，Field Effect Transistor）</h3><h4 id="6-1-分类">6.1 分类</h4><p><img src="image-8.png" alt="alt text"></p><h4 id="6-2-绝缘栅型场效应管（MOSFET，Metal-Oxide-Semiconductor-Field-Effect-Transistor）">6.2 绝缘栅型场效应管（MOSFET，Metal Oxide Semiconductor Field Effect Transistor）</h4><h5 id="6-2-1-N沟道增强型MOS管（E型，enhancement）">6.2.1 N沟道增强型MOS管（E型，enhancement）</h5><p><img src="image-9.png" alt="alt text"></p><p>!!! note<br><em>g-gate,s-source,d-drain</em><br>可以看出g极直接接触绝缘层（SiO<sub>2</sub>），<strong>所以g极侧几乎不会产生电流</strong></p><p>!!! Caution<br><strong>箭头相当于表示PN结方向，向内指，说明指向的是N沟道</strong></p><ul class="lvl-0"><li class="lvl-2"><p>加U<sub>GS</sub>时：开始时将SD之间的空穴移走，但同时也把下面区域的自由电子吸上去，形成了N沟道，沟道的大小与U<sub>GS</sub>相关，而沟道大小宏观反映为电阻，即变为电压控制的可变电阻<img src="image-10.png" alt="alt text"><br>当U<sub>GS</sub>&gt;开启电压U<sub>th</sub>后，DS之间有电流流过形成了压降U<sub>DS</sub>，则会出现下图中的情况，即出现靠近d的一侧由于U<sub>DS</sub>对U<sub>GS</sub>的抵消而减小了沟道大小。而当U<sub>GS</sub>-U<sub>DS</sub>=U<sub>th</sub>，<strong>即U<sub>DS</sub>=U<sub>GS</sub>-U<sub>th</sub>时，右侧几乎夹断，称为预夹断状态</strong>（但不会完全夹断，否则电流为0）<img src="image-11.png" alt="alt text"><br>之后若U<sub>DS</sub>继续增大，缝隙变长（电阻变大，抵消了U<sub>DS</sub>的作用，则电流会趋于平稳。所以称为恒流区。同时<strong>相当于此时决定I<sub>D</sub>电流的因素为U<sub>GS</sub>，显然U<sub>GS</sub>越大I<sub>D</sub>越大，所以也称这片区域为放大区</strong><br>转移特性图：<img src="image-12.png" alt="alt text"><br>$$I_{D}=I_{DO}(\frac{U_{GS}}{U_{th}}-1)^2$$其中I<sub>DO</sub>是U<sub>GS</sub>=2U<sub>th</sub>时的漏极电流输出特性图：<img src="image-13.png" alt="alt text"></p></li></ul><p>!!! note<br><em>叫“增强型”的原因：需要U<sub>GS</sub>增强到开启电压U<sub>th</sub>才能导通</em></p><h5 id="6-2-2-N沟道耗尽型MOS管（D型，dissipative）">6.2.2 N沟道耗尽型MOS管（D型，dissipative）</h5><p><img src="image-18.png" alt="alt text"><br>制作时天生让SiO<sub>2</sub>带正电，电场强到可以打开沟道。<br><img src="image-14.png" alt="alt text"></p><p><img src="image-15.png" alt="alt text"><br>$$I_{D}=I_{DSS}(1-\frac{U_{GS}}{U_{p}})^2$$其中I<sub>DSS</sub>为饱和漏极电流，是为U<sub>GS</sub>=0时的漏极电流。U<sub>P</sub>为夹断电压</p><h4 id="6-3-结型场效应管（JFET，Junction-FIeld-Effect-Tasnsistor）">6.3 结型场效应管（JFET，Junction FIeld Effect Tasnsistor）</h4><p><img src="image-16.png" alt="alt text"><br>U<sub>GS</sub>加反向电压使得沟道变窄，大到一定程度使得沟道夹断（不是预夹断，是真断）<br><img src="image-17.png" alt="alt text"><br><img src="image-19.png" alt="alt text"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课程总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电气 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MATLAB笔记</title>
       <link href="/2024/08/27/MATLAB%E7%AC%94%E8%AE%B0/"/>
       <url>/2024/08/27/MATLAB%E7%AC%94%E8%AE%B0/</url>
@@ -137,7 +227,7 @@
       <link href="/2024/06/30/Markdown/"/>
       <url>/2024/06/30/Markdown/</url>
       
-        <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><h1>基本操作篇</h1><h6 id="最小可以到六级标题">最小可以到六级标题</h6><p>有序列表：</p><ol><li class="lvl-3"><p>有序列表1</p></li><li class="lvl-3"><p>有序列表2</p></li></ol><p>无序列表：</p><ul class="lvl-0"><li class="lvl-2"><p>无序列表1</p></li></ul><ul class="lvl-0"><li class="lvl-2"><p>无序列表2</p></li></ul><p>清单：</p><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">吃饭</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">睡觉</label></p></li></ul><p>字体：<em>斜体</em>，<strong>粗体</strong>，<em><strong>粗斜体</strong></em>，<code>printf</code>,<u>下划线<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></u>,H<sub>2</sub>O,x<sup>2</sup>,<mark>高亮文字</mark>，<s>删除线</s>,</p><p style="color: red;">颜色</p>😀<br>表情代码大全在下面<p></p><h1>进阶操作篇</h1><h2 id="一、插入超链接：">一、插入超链接：</h2><pre><code>1. [Markdown语法](https://www.runoob.com/markdown/md-tutorial.html)2. 或者直接输入URL：https://blog.csdn.net/qq_39087432/article/details/115407374 （表情包代码链接）3. 跳转到[Markdown语法实例](#markdown语法实例)4. 挂嵌入视频的方法：b站分享-&gt;嵌入代码-&gt;粘贴但记得加https&lt;iframe src=&quot;https://player.bilibili.com/player.html?aid=327623069&amp;bvid=BV1JA411h7Gw&amp;cid=171385214&amp;p=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt; &lt;/iframe&gt;</code></pre><h2 id="二、插入图片">二、插入图片</h2><p><img src="https://ts1.cn.mm.bing.net/th/id/R-C.3e69986279120aa870f90428c6599abf?rik=YcHOEXNoV475Gw&amp;riu=http%3a%2f%2fpuui.qpic.cn%2fvpic_cover%2fr3368tr9gly%2fr3368tr9gly_hz.jpg%2f1280&amp;ehk=ySTntmNP%2fD97ATygyPHbOquFBs6PegxYjpuOsfTNWhk%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="邓紫棋" title="邓紫棋姐姐"><br>[]里的是当图片无法加载时显示的文字，用于描述图片的内容；()可以是图片的网络 URL 地址，也可以是本地图片的相对或绝对路径。</p><h2 id="三、插入区块">三、插入区块</h2><blockquote><p>这是一级区块</p><blockquote><p>这是二级区块</p></blockquote></blockquote><h2 id="四、插入代码块">四、插入代码块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> (<span class="string">&quot;这是一个代码块&quot;</span>)</span><br></pre></td></tr></table></figure><h2 id="五、插入下划线">五、插入下划线</h2><hr><h2 id="六、插入脚注">六、插入脚注</h2><p>在vscode上写代码<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p><h2 id="七、插入表格">七、插入表格</h2><table><thead><tr><th>a</th><th>b</th><th>c</th><th>d</th></tr></thead><tbody><tr><td>f</td><td>g</td><td>h</td><td>i</td></tr><tr><td>e</td><td>j</td><td>k</td><td>l</td></tr></tbody></table><h2 id="八、插入公式（语法同Latex）">八、插入公式（语法同Latex）</h2><p>$$ \lim_{x\to0}\frac{\sin x}{x}=1 $$<br>直接在这个网站上编辑公式把代码copy过来就行：<a href="https://latex.91maths.com/">https://latex.91maths.com/</a></p><h2 id="九、容器块（好像只是部分支持）">九、容器块（好像只是部分支持）</h2><p>!!! warning “注意”<br>注意缩进</p><pre><code>!!! warning &quot;注意&quot;    注意换行</code></pre><p>!!! note “注释”<br><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">感觉还挺好看的</label></p><p>!!! info “相关通知”</p><p>!!! caution “警告”</p><p>!!! tip “提示”</p><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>冷知识：Markdown可以兼容HTML语言 <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>指的是Visual Studio Code <a href="#fnref2" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
+        <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><h1>基本操作篇</h1><h6 id="最小可以到六级标题">最小可以到六级标题</h6><p>有序列表：</p><ol><li class="lvl-3"><p>有序列表1</p></li><li class="lvl-3"><p>有序列表2</p></li></ol><p>无序列表：</p><ul class="lvl-0"><li class="lvl-2"><p>无序列表1</p></li></ul><ul class="lvl-0"><li class="lvl-2"><p>无序列表2</p></li></ul><p>清单：</p><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">吃饭</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">睡觉</label></p></li></ul><p>字体：<em>斜体</em>，<strong>粗体</strong>，<em><strong>粗斜体</strong></em>，<code>printf</code>,<u>下划线<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></u>,H<sub>2</sub>O,x<sup>2</sup>,<mark>高亮文字</mark>，<s>删除线</s>,</p><p style="color: red;">颜色</p>😀<br>表情代码大全在下面<p></p><h1>进阶操作篇</h1><h2 id="一、插入超链接：">一、插入超链接：</h2><pre><code>1. [Markdown语法](https://www.runoob.com/markdown/md-tutorial.html)2. 或者直接输入URL：https://blog.csdn.net/qq_39087432/article/details/115407374 （表情包代码链接）3. 跳转到[Markdown语法实例](#markdown语法实例)4. 挂嵌入视频的方法：b站分享-&gt;嵌入代码-&gt;粘贴但记得加https&lt;iframe src=&quot;https://player.bilibili.com/player.html?aid=327623069&amp;bvid=BV1JA411h7Gw&amp;cid=171385214&amp;p=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt; &lt;/iframe&gt;</code></pre><h2 id="二、插入图片">二、插入图片</h2><p><img src="https://ts1.cn.mm.bing.net/th/id/R-C.3e69986279120aa870f90428c6599abf?rik=YcHOEXNoV475Gw&amp;riu=http%3a%2f%2fpuui.qpic.cn%2fvpic_cover%2fr3368tr9gly%2fr3368tr9gly_hz.jpg%2f1280&amp;ehk=ySTntmNP%2fD97ATygyPHbOquFBs6PegxYjpuOsfTNWhk%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="邓紫棋" title="邓紫棋姐姐"><br>[]里的是当图片无法加载时显示的文字，用于描述图片的内容；()可以是图片的网络 URL 地址，也可以是本地图片的相对或绝对路径。</p><h2 id="三、插入区块">三、插入区块</h2><blockquote><p>这是一级区块</p><blockquote><p>这是二级区块</p></blockquote></blockquote><h2 id="四、插入代码块">四、插入代码块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> (<span class="string">&quot;这是一个代码块&quot;</span>)</span><br></pre></td></tr></table></figure><h2 id="五、插入下划线">五、插入下划线</h2><hr><h2 id="六、插入脚注">六、插入脚注</h2><p>在vscode上写代码<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p><h2 id="七、插入表格">七、插入表格</h2><table><thead><tr><th>a</th><th>b</th><th>c</th><th>d</th></tr></thead><tbody><tr><td>f</td><td>g</td><td>h</td><td>i</td></tr><tr><td>e</td><td>j</td><td>k</td><td>l</td></tr></tbody></table><h2 id="八、插入公式（语法同Latex）">八、插入公式（语法同Latex）</h2><p>$$\lim_{x\to0}\frac{\sin x}{x}=1$$<br>直接在这个网站上编辑公式把代码copy过来就行：<a href="https://latex.91maths.com/">https://latex.91maths.com/</a></p><h2 id="九、容器块（好像只是部分支持）">九、容器块（好像只是部分支持）</h2><p>!!! warning “注意”<br>注意缩进</p><pre><code>!!! warning &quot;注意&quot;    注意换行</code></pre><p>!!! note “注释”<br><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">感觉还挺好看的</label></p><p>!!! info “相关通知”</p><p>!!! caution “警告”</p><p>!!! tip “提示”</p><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>冷知识：Markdown可以兼容HTML语言 <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>指的是Visual Studio Code <a href="#fnref2" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
       
       
       <categories>
@@ -167,16 +257,16 @@
       
       <categories>
           
-          <category> 有用的技术 </category>
+          <category> 杂的知识 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 课外知识 </tag>
-            
             <tag> 电气 </tag>
+            
+            <tag> 课外知识 </tag>
             
         </tags>
       
@@ -251,9 +341,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>大佬友链聚集地</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -262,9 +352,9 @@
     
     
     <entry>
-      <title>大佬友链聚集地</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

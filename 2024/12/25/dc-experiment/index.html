@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>电路与电子技术实验Ⅰ | Hamilton's Pluto</title><meta name="author" content="Hamilton2718"><meta name="copyright" content="Hamilton2718"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="电路原理部分 测量误差 相对误差分类 某值相对误差：$$ \delta&#x3D;\frac{|测量值-实际值|}{某值}\times100 % $$ 引用相对误差：$$ \gamma&#x3D;\frac{|测量值-实际值|}{仪表量程（上限-下限）}\times100% $$ 最大引用误差：$$ \gamma_m&#x3D;\frac{\Delta_m}{x_m}\times100%，\gamma\leq a% $$，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电路与电子技术实验Ⅰ">
+<meta property="og:url" content="http://example.com/2024/12/25/dc-experiment/index.html">
+<meta property="og:site_name" content="Hamilton&#39;s Pluto">
+<meta property="og:description" content="电路原理部分 测量误差 相对误差分类 某值相对误差：$$ \delta&#x3D;\frac{|测量值-实际值|}{某值}\times100 % $$ 引用相对误差：$$ \gamma&#x3D;\frac{|测量值-实际值|}{仪表量程（上限-下限）}\times100% $$ 最大引用误差：$$ \gamma_m&#x3D;\frac{\Delta_m}{x_m}\times100%，\gamma\leq a% $$，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/citysky.jpg">
+<meta property="article:published_time" content="2024-12-25T08:33:04.000Z">
+<meta property="article:modified_time" content="2024-12-25T09:16:45.823Z">
+<meta property="article:author" content="Hamilton2718">
+<meta property="article:tag" content="数电">
+<meta property="article:tag" content="电路原理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/citysky.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="http://example.com/2024/12/25/dc-experiment/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '电路与电子技术实验Ⅰ',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-25 17:16:45'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/citysky.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Hamilton's Pluto"><span class="site-name">Hamilton's Pluto</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">电路与电子技术实验Ⅰ</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-25T08:33:04.000Z" title="发表于 2024-12-25 16:33:04">2024-12-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-25T09:16:45.823Z" title="更新于 2024-12-25 17:16:45">2024-12-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/">课程总结</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="电路与电子技术实验Ⅰ"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<h2 id="电路原理部分">电路原理部分</h2>
+<h3 id="测量误差">测量误差</h3>
+<h4 id="相对误差分类">相对误差分类</h4>
+<p><strong>某值相对误差</strong>：$$ \delta=\frac{|测量值-实际值|}{某值}\times100 % $$<br>
+<strong>引用相对误差</strong>：$$ \gamma=\frac{|测量值-实际值|}{仪表量程（上限-下限）}\times100% $$<br>
+<strong>最大引用误差</strong>：$$ \gamma_m=\frac{\Delta_m}{x_m}\times100%，\gamma\leq a% $$，其中a为等级指数</p>
+<h4 id="直读式数字表的误差表示">直读式数字表的误差表示</h4>
+<p>直读式数字表的误差表示=被测量大小的相对量+固定量+显示误差<img src="image-59.png" alt="alt text"><br>
+<img src="image-60.png" alt="alt text"><br>
+字误差：字数乘以分辨率<br>
+<img src="image-61.png" alt="alt text"></p>
+<h4 id="有效数字">有效数字</h4>
+<p>从左边第一个非0位到最后一位所包含的数字，最后一位为可疑数字</p>
+<h4 id="仪器误差数据">仪器误差数据</h4>
+<h5 id="数字万用表（3字半）">数字万用表（3字半）</h5>
+<p>电阻测量：<img src="image-62.png" alt="alt text"><br>
+电容测量：<img src="image-63.png" alt="alt text"><br>
+电压测量：（仪表输入阻抗10MΩ）<img src="image-64.png" alt="alt text"><br>
+电流测量：（仪表输入阻抗6mA/600uA/60uA是99Ω，60mA/600mA/10A是0.99欧姆，交流电流档内阻0.99Ω）<br>
+<img src="image-65.png" alt="alt text"></p>
+<h5 id="仪器台上直流电压表">仪器台上直流电压表</h5>
+<p><img src="image-66.png" alt="alt text"></p>
+<h5 id="仪器台上直流电流表">仪器台上直流电流表</h5>
+<p><img src="image-67.png" alt="alt text"></p>
+<h2 id="数电实验">数电实验</h2>
+<h3 id="课程使用芯片介绍：">课程使用芯片介绍：</h3>
+<h4 id="1-74LS161二进制加法计数器">1. 74LS161二进制加法计数器</h4>
+<p><img src="image-2.png" alt="alt text"><br>
+<img src="image.png" alt="alt text"><br>
+CP：输入的信号；<br>
+CR：异步清零操作，低电平触发，优先级最高；<br>
+LD：置数模式（即通过输入数字）优先级第二高，低电平触发，写入3456引脚读取到的数，同步置数（即读取到CP有上升沿）；<br>
+CTp和CTt：有低电平则进入保持</p>
+<h4 id="2-74LS00与非门芯片">2. 74LS00与非门芯片:</h4>
+<p><img src="image-1.png" alt="alt text"></p>
+<h4 id="3-74LS55与或非门芯片">3. 74LS55与或非门芯片</h4>
+<p><img src="image-55.png" alt="alt text"></p>
+<h4 id="4-74LS74型双D触发器">4. 74LS74型双D触发器</h4>
+<p><img src="image-51.png" alt="alt text"></p>
+<p><img src="image-52.png" alt="alt text"></p>
+<h4 id="5-74LS107双JK触发器">5. 74LS107双JK触发器</h4>
+<p><img src="image-53.png" alt="alt text"></p>
+<p><img src="image-54.png" alt="alt text"><br>
+!!!<br>
+<em><strong>数码管显示数字原理:</strong></em> 用四个二进制的高低电平表示一个不大于10的数，四个位由高到低分为Q<sub>D</sub>、Q<sub>C</sub>、Q<sub>B</sub>、Q<sub>A</sub>。</p>
+<h4 id="6-74LS11三输入与门芯片">6. 74LS11三输入与门芯片</h4>
+<p><img src="image-58.png" alt="alt text"></p>
+<h3 id="Quartus文件名后缀">Quartus文件名后缀</h3>
+<table>
+<thead>
+<tr>
+<th>后缀</th>
+<th>全称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.bdf</td>
+<td>Block Design File</td>
+</tr>
+<tr>
+<td>.bsf</td>
+<td>Block Symbol File</td>
+</tr>
+<tr>
+<td>.qpf</td>
+<td>Quartus Projct Flie</td>
+</tr>
+<tr>
+<td>.vhd</td>
+<td>VHDL Design File</td>
+</tr>
+<tr>
+<td>.vwf</td>
+<td>Waveform.File</td>
+</tr>
+<tr>
+<td>.sof</td>
+<td>编译后产生的、将下载到FPGA中的文件的</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数字式计时器电路：">数字式计时器电路：</h3>
+<h4 id="1-60进制：">1. 60进制：</h4>
+<p>分为个位数码管和十位数码管，个位数码管10进制，十位数码管6进制。个位计时器当计数到10（二进制1010）时，CR置0，所以就需要一个与非门对Q<sub>B</sub>和Q<sub>D</sub>取与非。<br>
+<img src="image-3.png" alt="alt text"></p>
+<h4 id="2-24进制：">2. 24进制：</h4>
+<p>个位数码管部分基本不改动，但十位的CR需要在计时达到24（即二进制0100 0010）时置0。<img src="image-4.png" alt="alt text"></p>
+<h3 id="全加器">全加器</h3>
+<p><img src="image-68.png" alt="alt text"><br>
+<img src="image-69.png" alt="alt text"></p>
+<h3 id="历年题">历年题</h3>
+<p><strong>注意：记得检查自启动！！！</strong></p>
+<ol>
+<li class="lvl-3">
+<p>首先需要做出110-&gt;101-&gt;100-&gt;011-&gt;010-&gt;110五个三位二进制循环，输入1HZ信号，将三位输出接入数码管 再做出三位奇偶校验器并接入前面循环的输出，接到发光二极管上，要求在4和2时亮，6, 5, 3时灭 最后将时钟脉冲接入示波器CH1，奇偶校验器结果接入示波器CH2，并将时钟换成1024HZ<br>
+验收要求是<br>
+(1) 1HZ时观察6，5，4，3，2循环是否正确，奇偶校验器是否正常工作<br>
+(2) 1024HZ时，示波器上半部分显示CH1波形，下班部分显示CH2波形，要求显示两个周期左右，保证波形稳定做法：对减法计数器取反可得加法计数器，用161反馈置数法做出1——5循环再取反，奇偶校验器不用直接列异或表达式，可以只考虑出现的情况画卡诺图列真值表</p>
+</li>
+<li class="lvl-3">
+<p>时序电路设计，要求给定输入X与时钟信号CP，输出为Q0Q1Q2，X=0时输出4→5→6→4……的序列，X=1时输出0→1→2→0……的序列（1）X接逻辑开关，CP接1Hz脉冲，用数码管显示结果。（2）CP接1024Hz脉冲，用示波器显示稳定的图像，要求CH1接Q1，CH2接Q0。做法：用161做出3进制计数器，再将X取反接到数码管。这个思路很妙，不知道是怎么想到的。</p>
+</li>
+<li class="lvl-3">
+<p>电路实现010-011-100-101-110（搭完此电路，可以先用LED灯给老师验收） 以上述作为输出，进一步搭建奇偶判断电路或者能否被3整除的电路，用示波器观测输入与输出波形做法：常规的反馈计数法的加法计数器</p>
+</li>
+<li class="lvl-3">
+<p>利用JK触发器和与非门芯片，实现信号发生器，其能重复输出10011101信号，并完成连线做法：先搭000-111的八进制计数器，再画卡诺图列出输出信号的逻辑表达式进行译码。</p>
+</li>
+</ol>
+<h3 id="VHDL语言">VHDL语言</h3>
+<h4 id="基本结构">基本结构</h4>
+<p><img src="image-20.png" alt="alt text"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>LIBRARY:LIBRARY 语句声明库，常用ieee；</p>
+</li>
+<li class="lvl-2">
+<p>PACKAGE：USE 语句声明程序包，以下为ieee标准库所包含的程序包：<img src="image-21.png" alt="alt text"></p>
+</li>
+<li class="lvl-2">
+<p>ENTITY： 使用<code>ENTITY decode IS</code>定义，定义结束用<code>END decode</code>实体,用于确定设计的输入/输出；</p>
+</li>
+<li class="lvl-2">
+<p>ARCHITECTURE：语法如下图：用于规定实体的内部结构或实体行为，相当于main函数；<br>
+<img src="image-22.png" alt="alt text"></p>
+</li>
+</ul>
+<h4 id="语法">语法</h4>
+<h5 id="标识符">标识符</h5>
+<p>由英文字母大小写、数字和“_”组成</p>
+<p>!!! WARNING<br>
+<em><strong>大小写不区分，关键字不能做标识符;一定以英文字母开头;下划线不能连用也不能放结尾</strong></em></p>
+<h5 id="数据对象">数据对象</h5>
+<p>分类：端口（PORT）、信号（SIGNAL）、变量（VARIALBE）、常量（CONSTANT）</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>PORT：语法如下：<br>
+<img src="image-23.png" alt="alt text"><br>
+<img src="image-24.png" alt="alt text"></p>
+</li>
+<li class="lvl-2">
+<p>SIGNAL：<img src="image-26.png" alt="alt text"></p>
+</li>
+<li class="lvl-2">
+<p>VARIABLE：<img src="image-25.png" alt="alt text"></p>
+</li>
+<li class="lvl-2">
+<p>CONSTANT：<img src="image-27.png" alt="alt text"></p>
+</li>
+</ul>
+<h5 id="数据类型">数据类型</h5>
+<h6 id="标准定义的数据类型：">标准定义的数据类型：</h6>
+<p><img src="image-28.png" alt="alt text"></p>
+<h6 id="IEEE预定义的数据类型：">IEEE预定义的数据类型：</h6>
+<p><img src="image-29.png" alt="alt text"></p>
+<h5 id="运算符">运算符</h5>
+<h6 id="算术运算符">算术运算符</h6>
+<p><img src="image-30.png" alt="alt text"></p>
+<h6 id="关系运算符">关系运算符</h6>
+<p><img src="image-31.png" alt="alt text"></p>
+<h6 id="逻辑运算符">逻辑运算符</h6>
+<p><img src="image-32.png" alt="alt text"></p>
+<h6 id="连接运算符">连接运算符</h6>
+<p><img src="image-33.png" alt="alt text"></p>
+<h6 id="注释语法">注释语法</h6>
+<p><code>--</code>开头，到本行结束为止</p>
+<h5 id="属性">属性</h5>
+<p>关于实体、结构体、类型及信号的一些特征<br>
+<img src="image-38.png" alt="alt text"><br>
+<img src="image-34.png" alt="alt text"></p>
+<h5 id="顺序语句">顺序语句</h5>
+<p>分类：<code>IF_THEN_ELSE</code>、<code>CASE_WHEN</code>、<code>FOR_LOOP</code>、<code>NULL</code></p>
+<h6 id="IF-THEN-ELSE：">IF_THEN_ELSE：</h6>
+<p><img src="image-36.png" alt="alt text"></p>
+<h6 id="CASE-WHEN：">CASE_WHEN：</h6>
+<p><img src="image-37.png" alt="alt text"><br>
+<img src="image-39.png" alt="alt text"></p>
+<h6 id="FOR-LOOP：">FOR_LOOP：</h6>
+<p><img src="image-40.png" alt="alt text"></p>
+<h6 id="NULL：">NULL：</h6>
+<p><img src="image-41.png" alt="alt text"></p>
+<h5 id="并行语句">并行语句</h5>
+<p><img src="image-42.png" alt="alt text"></p>
+<h5 id="敏感信号">敏感信号</h5>
+<p>Conception：进程中一些被关注的信号，只有当其中的某个信号变化时，该进程才被执行；<img src="image-43.png" alt="alt text"></p>
+<h5 id="并行信号赋值">并行信号赋值</h5>
+<p><img src="image-44.png" alt="alt text"><br>
+<img src="image-45.png" alt="alt text"></p>
+<h4 id="实例">实例</h4>
+<p>设计一个异步清零、同步置数、带计数使能和进位输出的60进制BCD码计数器。<img src="image-46.png" alt="alt text"><br>
+代码实例：<img src="image-47.png" alt="alt text"><br>
+<img src="image-48.png" alt="alt text"><br>
+<img src="image-49.png" alt="alt text"><br>
+<img src="image-50.png" alt="alt text"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Hamilton2718</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/12/25/dc-experiment/">http://example.com/2024/12/25/dc-experiment/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Hamilton's Pluto</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E7%94%B5/">数电</a><a class="post-meta__tags" href="/tags/%E7%94%B5%E8%B7%AF%E5%8E%9F%E7%90%86/">电路原理</a></div><div class="post_share"><div class="social-share" data-image="/img/citysky.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/12/08/robot/" title="robot"><img class="cover" src="/img/%E6%9A%AE%E8%89%B2%E5%9B%9E%E5%93%8D.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">robot</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Hamilton2718</div><div class="author-info__description">大家好,我现就读于浙江大学的电气工程及其自动化专业。这个网站是我的个人blog网站,会不定时存放一些奇奇怪怪的东西。欢迎大家来找我交流学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Hamilton2718"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Hamilton2718" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E5%8E%9F%E7%90%86%E9%83%A8%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">电路原理部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E8%AF%AF%E5%B7%AE"><span class="toc-number">1.1.</span> <span class="toc-text">测量误差</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%AF%AF%E5%B7%AE%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text">相对误差分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E8%AF%BB%E5%BC%8F%E6%95%B0%E5%AD%97%E8%A1%A8%E7%9A%84%E8%AF%AF%E5%B7%AE%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text">直读式数字表的误差表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97"><span class="toc-number">1.1.3.</span> <span class="toc-text">有效数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%AA%E5%99%A8%E8%AF%AF%E5%B7%AE%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.4.</span> <span class="toc-text">仪器误差数据</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E4%B8%87%E7%94%A8%E8%A1%A8%EF%BC%883%E5%AD%97%E5%8D%8A%EF%BC%89"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">数字万用表（3字半）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%AA%E5%99%A8%E5%8F%B0%E4%B8%8A%E7%9B%B4%E6%B5%81%E7%94%B5%E5%8E%8B%E8%A1%A8"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">仪器台上直流电压表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%AA%E5%99%A8%E5%8F%B0%E4%B8%8A%E7%9B%B4%E6%B5%81%E7%94%B5%E6%B5%81%E8%A1%A8"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">仪器台上直流电流表</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%94%B5%E5%AE%9E%E9%AA%8C"><span class="toc-number">2.</span> <span class="toc-text">数电实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E4%BD%BF%E7%94%A8%E8%8A%AF%E7%89%87%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">课程使用芯片介绍：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-74LS161%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8A%A0%E6%B3%95%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">1. 74LS161二进制加法计数器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-74LS00%E4%B8%8E%E9%9D%9E%E9%97%A8%E8%8A%AF%E7%89%87"><span class="toc-number">2.1.2.</span> <span class="toc-text">2. 74LS00与非门芯片:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-74LS55%E4%B8%8E%E6%88%96%E9%9D%9E%E9%97%A8%E8%8A%AF%E7%89%87"><span class="toc-number">2.1.3.</span> <span class="toc-text">3. 74LS55与或非门芯片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-74LS74%E5%9E%8B%E5%8F%8CD%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">2.1.4.</span> <span class="toc-text">4. 74LS74型双D触发器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-74LS107%E5%8F%8CJK%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">2.1.5.</span> <span class="toc-text">5. 74LS107双JK触发器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-74LS11%E4%B8%89%E8%BE%93%E5%85%A5%E4%B8%8E%E9%97%A8%E8%8A%AF%E7%89%87"><span class="toc-number">2.1.6.</span> <span class="toc-text">6. 74LS11三输入与门芯片</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Quartus%E6%96%87%E4%BB%B6%E5%90%8D%E5%90%8E%E7%BC%80"><span class="toc-number">2.2.</span> <span class="toc-text">Quartus文件名后缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%BC%8F%E8%AE%A1%E6%97%B6%E5%99%A8%E7%94%B5%E8%B7%AF%EF%BC%9A"><span class="toc-number">2.3.</span> <span class="toc-text">数字式计时器电路：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-60%E8%BF%9B%E5%88%B6%EF%BC%9A"><span class="toc-number">2.3.1.</span> <span class="toc-text">1. 60进制：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-24%E8%BF%9B%E5%88%B6%EF%BC%9A"><span class="toc-number">2.3.2.</span> <span class="toc-text">2. 24进制：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%8A%A0%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text">全加器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%B9%B4%E9%A2%98"><span class="toc-number">2.5.</span> <span class="toc-text">历年题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VHDL%E8%AF%AD%E8%A8%80"><span class="toc-number">2.6.</span> <span class="toc-text">VHDL语言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">2.6.1.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">2.6.2.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">2.6.2.1.</span> <span class="toc-text">标识符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.6.2.2.</span> <span class="toc-text">数据对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.6.2.3.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%AE%9A%E4%B9%89%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="toc-number">2.6.2.3.1.</span> <span class="toc-text">标准定义的数据类型：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#IEEE%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="toc-number">2.6.2.3.2.</span> <span class="toc-text">IEEE预定义的数据类型：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.6.2.4.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.6.2.4.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.6.2.4.2.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.6.2.4.3.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.6.2.4.4.</span> <span class="toc-text">连接运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A%E8%AF%AD%E6%B3%95"><span class="toc-number">2.6.2.4.5.</span> <span class="toc-text">注释语法</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">2.6.2.5.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.6.2.6.</span> <span class="toc-text">顺序语句</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#IF-THEN-ELSE%EF%BC%9A"><span class="toc-number">2.6.2.6.1.</span> <span class="toc-text">IF_THEN_ELSE：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#CASE-WHEN%EF%BC%9A"><span class="toc-number">2.6.2.6.2.</span> <span class="toc-text">CASE_WHEN：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#FOR-LOOP%EF%BC%9A"><span class="toc-number">2.6.2.6.3.</span> <span class="toc-text">FOR_LOOP：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#NULL%EF%BC%9A"><span class="toc-number">2.6.2.6.4.</span> <span class="toc-text">NULL：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.6.2.7.</span> <span class="toc-text">并行语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%8F%E6%84%9F%E4%BF%A1%E5%8F%B7"><span class="toc-number">2.6.2.8.</span> <span class="toc-text">敏感信号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E4%BF%A1%E5%8F%B7%E8%B5%8B%E5%80%BC"><span class="toc-number">2.6.2.9.</span> <span class="toc-text">并行信号赋值</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.6.3.</span> <span class="toc-text">实例</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/12/25/dc-experiment/" title="电路与电子技术实验Ⅰ"><img src="/img/citysky.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="电路与电子技术实验Ⅰ"/></a><div class="content"><a class="title" href="/2024/12/25/dc-experiment/" title="电路与电子技术实验Ⅰ">电路与电子技术实验Ⅰ</a><time datetime="2024-12-25T08:33:04.000Z" title="发表于 2024-12-25 16:33:04">2024-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/08/robot/" title="robot"><img src="/img/%E6%9A%AE%E8%89%B2%E5%9B%9E%E5%93%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="robot"/></a><div class="content"><a class="title" href="/2024/12/08/robot/" title="robot">robot</a><time datetime="2024-12-08T10:52:48.000Z" title="发表于 2024-12-08 18:52:48">2024-12-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/probability/" title="probability"><img src="/img/citysky.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="probability"/></a><div class="content"><a class="title" href="/2024/11/28/probability/" title="probability">probability</a><time datetime="2024-11-28T15:21:40.000Z" title="发表于 2024-11-28 23:21:40">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/Circuit/" title="Analogue Circuit"><img src="/img/%E6%9A%AE%E8%89%B2%E5%9B%9E%E5%93%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Analogue Circuit"/></a><div class="content"><a class="title" href="/2024/11/28/Circuit/" title="Analogue Circuit">Analogue Circuit</a><time datetime="2024-11-28T15:16:13.000Z" title="发表于 2024-11-28 23:16:13">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/27/MATLAB%E7%AC%94%E8%AE%B0/" title="MATLAB笔记"><img src="/img/%E6%9A%AE%E8%89%B2%E5%9B%9E%E5%93%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MATLAB笔记"/></a><div class="content"><a class="title" href="/2024/08/27/MATLAB%E7%AC%94%E8%AE%B0/" title="MATLAB笔记">MATLAB笔记</a><time datetime="2024-08-27T06:50:04.000Z" title="发表于 2024-08-27 14:50:04">2024-08-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/citysky.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2024 By Hamilton2718</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Aimed to correct old time and regulate the sun</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

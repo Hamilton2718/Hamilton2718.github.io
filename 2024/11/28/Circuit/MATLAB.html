@@ -1,0 +1,443 @@
+<h1>基础</h1>
+<h2 id="重要cmd">重要cmd</h2>
+<p><code>clc</code>清空命令行<code>clear</code>清空工作区<br>
+<code>help 函数名</code> 查函数使用教程<br>
+<code>doc 函数名</code> 查官方文档</p>
+<hr>
+<h2 id="语法">语法</h2>
+<h3 id="算术运算符">算术运算符</h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+和-</td>
+<td>矩阵中只要兼容就可加，五种兼容模式：大小相同、一方为标量常数、行数相同列向量、列数相同行向量、列向量±行向量</td>
+</tr>
+<tr>
+<td>* 和.*</td>
+<td>*就是正常的矩阵乘法，.*是对应元素相乘</td>
+</tr>
+<tr>
+<td>/和\和.\</td>
+<td>/左除（求A*x=B的x），\右除，.\对应元素相除</td>
+</tr>
+<tr>
+<td><sup>和.</sup></td>
+<td>^矩阵幂运算，. ^对应元素幂运算</td>
+</tr>
+</tbody>
+</table>
+<h3 id="关系运算符：">关系运算符：</h3>
+<p>==、~=(不等于)、&gt;、&lt;、&gt;=、&lt;=，对于矩阵符合兼容模式算法，返回logical元素矩阵</p>
+<h3 id="逻辑运算符">逻辑运算符</h3>
+<p>（and()）&amp;、（or()）|、（not()）~、xor()（比较逻辑值，比如xor(3,4)结果为0），对于矩阵符合兼容模式算法，返回logical元素矩阵<br>
+&amp;&amp;、||与&amp;、|相同但只用于标量且具有短路功能</p>
+<h3 id="数学运算函数">数学运算函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abs</td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>floor</td>
+<td>往小舍</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>去小数部分</td>
+</tr>
+<tr>
+<td>ceil</td>
+<td>往大入</td>
+</tr>
+<tr>
+<td>round</td>
+<td>四舍五入</td>
+</tr>
+<tr>
+<td>mod</td>
+<td>模</td>
+</tr>
+<tr>
+<td>sqrt</td>
+<td>开方</td>
+</tr>
+<tr>
+<td>exp</td>
+<td>e的几次</td>
+</tr>
+<tr>
+<td>log</td>
+<td>以e为底数</td>
+</tr>
+<tr>
+<td>log2()</td>
+<td>以2为底数</td>
+</tr>
+<tr>
+<td>三角函数名</td>
+<td>对应的三角函数（可以在三角名后加d表示用角度制）,反三角则是a+三角函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="判断浮点数相同">判断浮点数相同</h3>
+<p>e.g.</p>
+<pre><code class="language-MATLAB">C=0.5-0.4-0.1;
+C==0 %结果是0
+</code></pre>
+<pre><code class="language-MATLAB">C=0.5-0.4-0.1;
+abs(C-0)&lt;=1e-12&gt; %结果是1,用一个小的数字去容差判断
+</code></pre>
+<hr>
+<h2 id="矩阵">矩阵</h2>
+<h3 id="创建矩阵">创建矩阵</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>A=[a,b,c]</code>创建行向量（，可换空格）</p>
+</li>
+<li class="lvl-2">
+<p><code>A=[a;b;c]</code>创建列向量（；可换换行）</p>
+</li>
+<li class="lvl-2">
+<p><code>A=[a b c;e f g]</code>创建多维矩阵</p>
+</li>
+<li class="lvl-2">
+<p><code>A=a:b:c</code>,即从a到c,步长为b的矩阵</p>
+</li>
+<li class="lvl-2">
+<p>用函数</p>
+</li>
+</ul>
+<h3 id="索引">索引</h3>
+<p>MATLAB索引从1开始。引用格式：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>A(row_ind,col_ind)</code></p>
+</li>
+<li class="lvl-2">
+<p><code>A([a,b,c...])</code></p>
+</li>
+<li class="lvl-2">
+<p><code>A(a:b:c)</code>（索引多个数据用）</p>
+</li>
+<li class="lvl-2">
+<p>用end关键字</p>
+</li>
+<li class="lvl-2">
+<p><code>A(:,a)</code>返回第a列所有元素</p>
+</li>
+<li class="lvl-2">
+<p><code>A(A&gt;0)</code>返回A中大于0的元素（逻辑值引用）</p>
+</li>
+<li class="lvl-2">
+<p><code>linspace()</code></p>
+</li>
+</ul>
+<h3 id="修改删除元素">修改删除元素</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>A(1)=0</code></p>
+</li>
+<li class="lvl-2">
+<p><code>A(a:b:c)=[]</code>注意左右元素个数要相等</p>
+</li>
+<li class="lvl-2">
+<p><code>A(a:b:c)=x</code>将所有选中索引全修改为一个常数</p>
+</li>
+<li class="lvl-2">
+<p><code>A(...)=[]</code>删除</p>
+</li>
+</ul>
+<h3 id="函数">函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linspace(a,b,n)</td>
+<td>创建a到b共n个元素的矩阵,等差分布，n默认100</td>
+</tr>
+<tr>
+<td>logspace(a,b,n)</td>
+<td>创建10^a 到10^b共n个元素的矩阵,等比分布，n默认50</td>
+</tr>
+<tr>
+<td>zeros(n)</td>
+<td>创建n行n列的全0矩阵</td>
+</tr>
+<tr>
+<td>ones(n)</td>
+<td>创建n行n列的全1矩阵</td>
+</tr>
+<tr>
+<td>eye(n)</td>
+<td>创建单位矩阵</td>
+</tr>
+<tr>
+<td>length</td>
+<td>数组最大维度的长度</td>
+</tr>
+<tr>
+<td>numel</td>
+<td>返回矩阵元素个数</td>
+</tr>
+<tr>
+<td>rand(m,n)</td>
+<td>创建m行n列的均匀分布于0到1的矩阵，m可缺省</td>
+</tr>
+<tr>
+<td>randi([a,b],m,n)</td>
+<td>创建m行n列的均匀分布于0到1的矩阵，m可缺省</td>
+</tr>
+<tr>
+<td>randn(m,n)</td>
+<td>创建m行n列的标准正态分布于矩阵，m可缺省</td>
+</tr>
+<tr>
+<td>diag(v,k)or diag(A,k)</td>
+<td>将向量v的元素对角分布在第k条对角线上，k=0主对角，&gt;0上，&lt;0下方，k缺省0;或返回矩阵A第k对角线上元素</td>
+</tr>
+<tr>
+<td>blkdiag(A,B,C…)</td>
+<td>将输入的矩阵A、B…对角化分布</td>
+</tr>
+<tr>
+<td>size(A,dim)</td>
+<td>返回A矩阵在dim维度上的元素个数，dim缺省1即沿行方向</td>
+</tr>
+<tr>
+<td>logical(A)</td>
+<td>将A矩阵转换为逻辑值矩阵</td>
+</tr>
+<tr>
+<td>isnan(A)</td>
+<td>判断A中元素是否为NaN，并返回逻辑值矩阵（比如将矩阵A中的NaN替代成其他元素平均值，可以用<code>A(isnan(A))=mean(A(~isnan(A)))</code></td>
+</tr>
+<tr>
+<td>all()</td>
+<td>判断数组元素是否全为非零值（可指定维度），返回逻辑值矩阵</td>
+</tr>
+<tr>
+<td>any()</td>
+<td>判断数组元素是否至少有一个非零值（可指定维度），返回逻辑值矩阵</td>
+</tr>
+<tr>
+<td>[row_ind,col_ind,v]=find(A)</td>
+<td>查找非零元素并返回索引,当只有一个回参时，返回线性索引，v为由非0元素组成的向量</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="集合">集合</h2>
+<h3 id="函数-2">函数</h3>
+<hr>
+<h2 id="程序流程控制">程序流程控制</h2>
+<h3 id="一、条件语句">一、条件语句</h3>
+<h4 id="if-elseif-else-end语句：">if-elseif-else-end语句：</h4>
+<pre><code class="language-MATLAB">if x&gt;=90 &amp;&amp; x&lt;=100 %不需要分号或冒号
+    dj=1
+elseif x&lt;90 &amp;&amp; x&gt;=60
+    dj=2
+else
+    dj=3
+end %有if就一定要有end
+dj
+</code></pre>
+<p><strong>在MATLAB中可以用ctrl+i来格式化选中代码</strong></p>
+<h4 id="switch-case-otherwise-end语句">switch-case-otherwise-end语句</h4>
+<pre><code class="language-MATLAB">season=randi([1,4])
+switch season
+    case 1
+        disp(&quot;春季&quot;);
+    case 2
+        disp(&quot;夏季&quot;);
+    case 3
+        disp(&quot;秋季&quot;);
+    otherwise
+        disp(&quot;冬季&quot;);
+end
+</code></pre>
+<p>如果case后跟的是元胞数组，只要开关变量和数组中任意一个元素相等即可</p>
+<h3 id="二、循环语句">二、循环语句</h3>
+<h4 id="for-end语句">for-end语句</h4>
+<pre><code class="language-MATLAB">for ii=[3;4;5;6;7]%向量或矩阵，如果是矩阵，遍历的元素是每一列向量
+    %循环体
+end
+</code></pre>
+<p>还可以：</p>
+<pre><code class="language-MATLAB">for ii=3:7
+    %循环体
+end
+</code></pre>
+<h4 id="while-end语句">while-end语句</h4>
+<pre><code class="language-MATLAB">m=1;
+while y&lt;=10
+    m=m+1;
+end
+</code></pre>
+<p><strong>注意：如果死循环后可以按ctrl+c退出</strong></p>
+<h4 id="break和continue">break和continue</h4>
+<p>和C一样，不赘述</p>
+<h3 id="三、其他">三、其他</h3>
+<h4 id="1-try-catch语句">1.try catch语句</h4>
+<p>try的代码块是可能引发故障的语句，若故障，则执行catch块的代码</p>
+<pre><code class="language-MATLAB">try
+    A+B
+catch
+    disp(&quot;大小不兼容&quot;)
+end
+</code></pre>
+<h4 id="2-tic-toc">2.tic/toc</h4>
+<p>可以输出tic和toc之间程序的运行时长</p>
+<pre><code class="language-MATLAB">tic
+sum=0;
+for i=1:7
+    sum=sum+i;
+    disp(sum);
+end
+toc
+</code></pre>
+<p>命令行窗口会自动输出运行时间</p>
+<h4 id="3-pause">3.pause</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>pause:使程序停止，待用户按下任意键继续</p>
+</li>
+<li class="lvl-2">
+<p>pause(n):使程序停止n秒</p>
+</li>
+</ul>
+<h4 id="4-input">4.input</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>input(‘提示’),如果要输入字符串需要自己加引号</p>
+</li>
+<li class="lvl-2">
+<p>input(‘提示’，‘s’)，不需要自己加引号，专门接受文本</p>
+</li>
+</ul>
+<h4 id="5-warning-error">5.warning/error</h4>
+<p>warning(“txt”)：自定义生成警告文本<br>
+warning on/off：开启或关闭警告功能<br>
+error(“txt”)：自定义生成报错文本<br>
+<strong>区别：warning的信息是橘红色，error是红色；warning后的代码还会运行，error直接退出程序</strong></p>
+<hr>
+<h2 id="文本处理">文本处理</h2>
+<p>MATLAB使用的编码是UTF-16，所以文本对应的编码是unicode码</p>
+<h3 id="一些语法">一些语法</h3>
+<h4 id="文本中的加减">文本中的加减</h4>
+<p>char+char是拼接<br>
+char-char是unicode码相减<br>
+char+数字同C,但会将字符串转换为对应的Unicode码，需要用char(str)z转换回来</p>
+<h4 id="储存形式">储存形式</h4>
+<p>MATLAB中的字符串是以字符向量储存的，多段文本按字符数组储存</p>
+<h4 id="插入换行">插入换行</h4>
+<p><code>c_new=[c1,char[10],c2]</code><br>
+<code>c_new=[c1,newline,c2]</code></p>
+<h3 id="函数：">函数：</h3>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strcmp</td>
+<td>比较字符向量是否相同（区分大小写）</td>
+</tr>
+<tr>
+<td>strcmpi</td>
+<td>比较字符向量是否相同（不区分大小写）</td>
+</tr>
+<tr>
+<td>strncmp</td>
+<td>比较前n个字符是否相同（区分大小写）</td>
+</tr>
+<tr>
+<td>strncmpi</td>
+<td>比较前n个字符是否相同（不区分大小写）</td>
+</tr>
+<tr>
+<td>erase(str,match)</td>
+<td>删除str字符串的子字符串match</td>
+</tr>
+<tr>
+<td>numel(str)/length(str)</td>
+<td>统计字符向量中字符的数量</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="元胞数组">元胞数组</h2>
+<p>用于存储不同数据类型的数据容器，用{}括起来，形式上与矩阵相似，可以储存矩阵甚至元胞数组</p>
+<h3 id="常见数据类型：">常见数据类型：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数值：包括整型和浮点</p>
+</li>
+<li class="lvl-2">
+<p>文本：包括字符（char）和字符串（string）</p>
+</li>
+<li class="lvl-2">
+<p>逻辑（logical）：布尔变量true/false</p>
+</li>
+<li class="lvl-2">
+<p>元胞数组（cell）</p>
+</li>
+<li class="lvl-2">
+<p>结构体数组（struct）：</p>
+</li>
+<li class="lvl-2">
+<p>分类数组（categorical）：保存分类型变量</p>
+</li>
+<li class="lvl-2">
+<p>日期时间（datetime）：保存日期、时间的数据</p>
+</li>
+<li class="lvl-2">
+<p>表格（table）：保存表格形式数据</p>
+</li>
+<li class="lvl-2">
+<p>函数句柄：可引用和间接调用函数</p>
+</li>
+</ul>
+<p><em>查看变量类型可以用<code>class(a)</code>查看</em></p>
+<h3 id="引用">引用</h3>
+<h4 id="引用-2">()引用</h4>
+<p>形式和索引查找一样，但不是直接返回该元素，而是返回一个对应大小的元胞数组</p>
+<h4 id="引用-3">{}引用</h4>
+<p>形式和索引查找一样，直接返回该元素</p>
+<h4 id="链式引用">链式引用</h4>
+<pre><code class="language-MATLAB">cc={[1,2,3;4,5,6],'abc'};
+cc{1}[2] %对应的即是2
+cc{2}[3] %对应的就是c
+</code></pre>
+<h4 id="嵌套的cell引用">嵌套的cell引用</h4>
+<p>形如<code>cc{a}{b}[c]</code></p>
+<hr>
+<h2 id="函数-3">函数</h2>
+<p>MATLAB中创建函数名需要和文件名一致</p>
+<hr>
+<hr>
+<h1>进阶</h1>
