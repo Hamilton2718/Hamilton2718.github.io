@@ -1,0 +1,449 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>分析力学基础 | Hamilton's Pluto</title><meta name="author" content="Hamilton2718"><meta name="copyright" content="Hamilton2718"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="对跨专业课理论力学的分析力学部分的总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分析力学基础">
+<meta property="og:url" content="http://example.com/2025/02/12/analytical-mechanics/index.html">
+<meta property="og:site_name" content="Hamilton&#39;s Pluto">
+<meta property="og:description" content="对跨专业课理论力学的分析力学部分的总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/%E4%BB%99%E5%A2%831.jpg">
+<meta property="article:published_time" content="2025-02-12T03:17:08.000Z">
+<meta property="article:modified_time" content="2025-02-12T03:49:13.314Z">
+<meta property="article:author" content="Hamilton2718">
+<meta property="article:tag" content="理论力学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/%E4%BB%99%E5%A2%831.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="http://example.com/2025/02/12/analytical-mechanics/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '分析力学基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-12 11:49:13'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/%E4%BB%99%E5%A2%831.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Hamilton's Pluto"><span class="site-name">Hamilton's Pluto</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">分析力学基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-12T03:17:08.000Z" title="发表于 2025-02-12 11:17:08">2025-02-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-12T03:49:13.314Z" title="更新于 2025-02-12 11:49:13">2025-02-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/">课程总结</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="分析力学基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>分析力学基础</h1>
+<h2 id="1-变分法简介">1 变分法简介</h2>
+<h3 id="1-1-问题背景">1.1 问题背景</h3>
+<p>变分法首先提出于解决最速降线问题：如下图：X轴向左为正，Y轴向下为正。质量为m的小球只收到沿Y轴正向的重力mg，从定点$(x_1,y_1)$到定点$(x_2,y_2)$的所有光滑<strong>连续</strong>轨迹中，哪一条用时最短？</p>
+<blockquote>
+<p>这里强调连续是出于对于物理世界的直觉经验，一般不连续的轨迹很难实现用时最短</p>
+</blockquote>
+<p>可以将以上问题转化为如下数学问题：设该轨迹方程为$y=y(x)$</p>
+<p>由机械能守恒：<br>
+$$<br>
+\begin{align}<br>
+mgy=\frac{1}{2}mv^2<br>
+\end{align}<br>
+$$<br>
+化简得到：<br>
+$$<br>
+\begin{align}<br>
+v=\sqrt{2gy}<br>
+\end{align}<br>
+$$<br>
+设总时间为T：<br>
+$$<br>
+\begin{align}<br>
+T&amp;= \int_{x_1}^{x_2} dt\<br>
+&amp;= \int_{x_1}^{x_2} \frac{1}{v}ds\<br>
+&amp;= \int_{x_1}^{x_2} \sqrt{\frac{1+y’^2}{2gy}}dx<br>
+\end{align}<br>
+$$</p>
+<p>我们观察发现T是关于$y(x)$这个函数的函数（每一个$y(x)$对应一个T值），我们称这类函数的函数为<strong>泛函</strong>。而我们的工作就是要求出这个泛函取极小值时对应的$y(x)$</p>
+<h3 id="1-2-准备工作">1.2 准备工作</h3>
+<p>Lemma1：若$\int_{a}^{b}M(x)\beta(x)dx=0$，其中$\beta(x)$为任意函数，则$M(x)=0$。<br>
+proof：</p>
+<ol>
+<li class="lvl-3">
+<p>几何理解：若$\beta(x)$为在x轴上任意取一段的凸起（如图），那$M(x)$在这段必为0，由于任意性，$M(x)$应该处处为0</p>
+<blockquote>
+<p>严格上说应该是几乎处处为0（其实可以允许一些离散的点不等于0，但我们一般研究的是连续函数，所以这类函数我们不作考虑</p>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p>代数证明：</p>
+</li>
+</ol>
+<p>令<br>
+$$<br>
+\beta(x)=-M(x)(x-a)(x-b)<br>
+$$</p>
+<p>则<br>
+$$<br>
+\int_{a}^{b} M(x)\beta(x)dx=\int_{a}^{b} M^2(x-a)(b-x)dx=0<br>
+$$</p>
+<p>由于</p>
+<p>$$<br>
+(x-a)(b-a)&gt;0<br>
+$$</p>
+<p>因此</p>
+<p>$$<br>
+M(x)=0<br>
+$$</p>
+<h3 id="1-3-Euler-Equation">1.3 Euler Equation</h3>
+<p>设$y(x)$为我们希望求的解，$\bar{y}(x)$为连接两点间所有光滑曲线的集合</p>
+<p>令<br>
+$$<br>
+\begin{align}<br>
+\bar{y}(x)=y+\epsilon\beta(x)<br>
+\end{align}<br>
+$$</p>
+<p>其中$\epsilon$为一实数，$\beta(x)$是一可变动的函数</p>
+<p>$\bar{y}(x)$有几个比较好的性质：</p>
+<ol>
+<li class="lvl-3">
+<p>$\beta(x_1)=\beta(x_2)=0$</p>
+</li>
+<li class="lvl-3">
+<p>当$\epsilon=0$时，$T$取得极值</p>
+</li>
+</ol>
+<p>令<br>
+$$<br>
+I(\epsilon)=\int^{x_2}_{x_1}F(x,\bar{y},\bar{y’})dx,其中\bar{y}=y+\epsilon\beta(x),\bar{y’}=y’+\epsilon\beta’(x)<br>
+$$</p>
+<p>由以上性质：</p>
+<p>$$<br>
+\begin{align}<br>
+\left.\frac{dI}{d\epsilon}\right|<em>{\epsilon=0} = \int</em>{x_1}^{x_2} \frac{\partial F}{\partial \epsilon}dx<br>
+\end{align}<br>
+$$</p>
+<p>$$<br>
+\begin{align}<br>
+= \int_{x_1}^{x_2} (\frac{\partial F}{x}\frac{\partial x}{\partial \epsilon}+\frac{\partial F}{\partial \bar{y}}\frac{\partial \bar{y}}{\partial \epsilon}+\frac{\partial F}{\partial \bar{y’}}\frac{\partial \bar{y’}}{\partial \epsilon})dx<br>
+\end{align}<br>
+$$</p>
+<p>$$<br>
+\begin{align}<br>
+= \int_{x_1}^{x_2} (\frac{\partial F}{\partial \bar{y}} \beta+\frac{\partial F}{\partial \bar{y’}} \beta ')dx<br>
+\end{align}<br>
+$$</p>
+<p>由分部积分法：</p>
+<p>$$<br>
+\begin{align}<br>
+\int_{x_1}^{x_2} \frac{\partial F}{\partial y’} d \beta = \frac{\partial F}{\partial y’}  \beta | <em>{x_1}^{x_2} - \int</em>{x_1}^{x_2} \beta d (\frac{\partial F}{\partial y’})<br>
+\end{align}<br>
+$$</p>
+<p>$$<br>
+\because\beta(x_1)=\beta(x_2)=0<br>
+$$</p>
+<p>$$<br>
+\begin{align}<br>
+\therefore\int_{x_1}^{x_2} \frac{\partial F}{\partial y’}d\beta=-\int^{x_2}_{x_1} \beta d(\frac{\partial F}{\partial y’})<br>
+\end{align}<br>
+$$</p>
+<p>故</p>
+<p>$$<br>
+\begin{align}<br>
+\frac{dI}{d\epsilon}|<em>{\epsilon=0}&amp;= \int</em>{x_1}^{x_2} \frac{\partial F}{\partial y}\beta dx-\beta\frac{d(\frac{\partial F}{\partial y’})}{dx}dx\<br>
+&amp;=\int^{x_2}_{x_1} \beta(\frac{\partial F}{\partial y}-\frac{d(\frac{\partial F}{\partial y’})}{dx})dx<br>
+\end{align}<br>
+$$</p>
+<p>$\beta$为一任意变动的函数，由Lemma1可得：</p>
+<p>$$<br>
+\begin{align}<br>
+\frac{\partial F}{\partial y}\beta dx-\beta\frac{d(\frac{\partial F}{\partial y’})}{dx}=0<br>
+\end{align}<br>
+$$</p>
+<p>式（14）就是Euler equation的第一种形式</p>
+<h3 id="1-4-Euler-equation第二形式">1.4 Euler equation第二形式</h3>
+<p>考虑$\frac{dF(x,y,y’)}{dx}$：<br>
+$$<br>
+\begin{align}<br>
+\frac{dF}{dx}=\frac{\partial F}{\partial x}+\frac{\partial F}{\partial y}y’+\frac{\partial F}{\partial y’}y’’<br>
+\end{align}<br>
+$$</p>
+<p>由于</p>
+<p>$$<br>
+\begin{align}<br>
+\frac{d}{dx}(y’\frac{\partial F}{\partial y’})=y’‘(\frac{\partial F}{\partial y’})+y’\frac{d}{dx}(\frac{\partial F}{\partial y’})<br>
+\end{align}<br>
+$$</p>
+<p>将（15）（16）联立：</p>
+<p>$$<br>
+\begin{align}<br>
+\frac{d}{dx}(F-y’\frac{\partial F}{\partial y’})-\frac{\partial F}{\partial x}=y’(\frac{\partial F}{\partial y}-\frac{d}{dx}(\frac{\partial F}{\partial y’}))=0<br>
+\end{align}<br>
+$$</p>
+<p>（17）式即为Eule equation的第二形式，当$\frac{\partial F}{\partial x}=0$时：</p>
+<p>$$<br>
+\begin{align}<br>
+\frac{d}{dx}(F-y’\frac{\partial F}{\partial y’})=0<br>
+\end{align}<br>
+$$</p>
+<p>即</p>
+<p>$$<br>
+\begin{align}<br>
+F-y’\frac{\partial F}{\partial y’}=C<br>
+\end{align}<br>
+$$</p>
+<h3 id="1-5-最速降线问题解决">1.5 最速降线问题解决</h3>
+<p>对（5）式应用Euler equation的第二形式，令$F=\sqrt{\frac{1+y’^2}{2gy}}$：<br>
+$$<br>
+\begin{align}<br>
+\frac{\partial F}{\partial y’}=\frac{y’}{\sqrt{2gy(1+y’^2)}}<br>
+\end{align}<br>
+$$</p>
+<p>化简得：</p>
+<p>$$<br>
+\begin{align}<br>
+\frac{dy}{dx}=\sqrt{\frac{c}{y}-1}<br>
+\end{align}<br>
+$$<br>
+利用偏微分方程知识可以接触来$y(x)$实际上为摆线方程</p>
+<h2 id="2-Lagrange-equation">2 Lagrange equation</h2>
+<p>分析力学中，我们定义作用量$L$：<br>
+$$<br>
+L=T-V<br>
+$$<br>
+其中T为系统动能，V为系统势能则Lagrange equation为：<br>
+$$<br>
+\begin{align}<br>
+\frac{d}{dt}(\frac{\partial L}{\partial \dot{q}})-\frac{\partial L}{\partial q}=\widetilde{Q}<br>
+\end{align}<br>
+$$<br>
+$\widetilde{Q}$为系统所受非保守力通过上述对变分法的了解，我们不难发现Lagrange equation实际上就是令$L$取极小值时的Euler equation第一形式，这也是最小作用量原理的由来。</p>
+<h2 id="3-Hamliton’s-equations">3 Hamliton’s equations</h2>
+<h3 id="3-1-Legendre-transformation（勒让德变换）">3.1 Legendre transformation（勒让德变换）</h3>
+<p>对于一个多元函数$X=X(x_1,x_2,…,x_n;\alpha_1,\alpha_2,…,\alpha_m)$，设$y_i=\frac{\partial X}{\partial x_i}$，我们定义其Lerangge transformation $Y=Y(y_1,y_2,…,y_n;\alpha_1,\alpha_2,…,\alpha_m)$为：<br>
+$$<br>
+\begin{align}<br>
+Y=\sum_{i=1}^{n}x_iy_i-X<br>
+\end{align}<br>
+$$</p>
+<p>且根据Legendre transformation的性质，我们有：</p>
+<p>$$<br>
+\begin{align}<br>
+x_i=\frac{\partial Y}{\partial y_i}<br>
+\end{align}<br>
+$$</p>
+<p><strong>即legendra transformation的逆变换也是legendra transformation</strong><br>
+还得到</p>
+<p>$$<br>
+\begin{align}<br>
+\frac{\partial Y}{\partial \alpha_i}=-\frac{\partial X}{\partial \alpha_i}<br>
+\end{align}<br>
+$$</p>
+<h3 id="3-2-From-Lagrange-equation-to-Hamliton’s-equations">3.2 From Lagrange equation to Hamliton’s equations</h3>
+<p>经典Lagrangian为$L=L(q_1,q_2,…,q_n;\dot{q_1},\dot{q_2},…,\dot{q_n})$，其中$q$为广义坐标，$\dot{q}$为广义速度定义广义动量p为：<br>
+$$<br>
+\begin{align}<br>
+p_i=\frac{\partial L}{\partial \dot{q_i}}<br>
+\end{align}<br>
+$$</p>
+<p>由legendra transformation得 Hamiltonian H：</p>
+<p>$$<br>
+\begin{align}<br>
+H=\sum_{i=1}^{n}p_i\dot{q_i}-L<br>
+\end{align}<br>
+$$<br>
+且由式（24）得：<br>
+$$<br>
+\begin{align}<br>
+\dot{q_i}=\frac{\partial H}{\partial p_i}<br>
+\end{align}<br>
+$$<br>
+带入Lagrange equation得：<br>
+$$<br>
+\begin{align}<br>
+p_i=-\frac{\partial H}{\partial q_i}+\widetilde{Q}<br>
+\end{align}<br>
+$$<br>
+式（28）（29）即为Hamliton’s equations</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Hamilton2718</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/02/12/analytical-mechanics/">http://example.com/2025/02/12/analytical-mechanics/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Hamilton's Pluto</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/">理论力学</a></div><div class="post_share"><div class="social-share" data-image="/img/%E4%BB%99%E5%A2%831.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/12/25/dc-experiment/" title="电路与电子技术实验Ⅰ"><img class="cover" src="/img/%E4%BB%99%E5%A2%831.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">电路与电子技术实验Ⅰ</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Hamilton2718</div><div class="author-info__description">大家好,我现就读于浙江大学的电气工程及其自动化专业。这个网站是我的个人blog网站,会不定时存放一些奇奇怪怪的东西。欢迎大家来找我交流学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Hamilton2718"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Hamilton2718" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">分析力学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%98%E5%88%86%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-text">1 变分法简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF"><span class="toc-text">1.1 问题背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">1.2 准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Euler-Equation"><span class="toc-text">1.3 Euler Equation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Euler-equation%E7%AC%AC%E4%BA%8C%E5%BD%A2%E5%BC%8F"><span class="toc-text">1.4 Euler equation第二形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%9C%80%E9%80%9F%E9%99%8D%E7%BA%BF%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-text">1.5 最速降线问题解决</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Lagrange-equation"><span class="toc-text">2 Lagrange equation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hamliton%E2%80%99s-equations"><span class="toc-text">3 Hamliton’s equations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Legendre-transformation%EF%BC%88%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2%EF%BC%89"><span class="toc-text">3.1 Legendre transformation（勒让德变换）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-From-Lagrange-equation-to-Hamliton%E2%80%99s-equations"><span class="toc-text">3.2 From Lagrange equation to Hamliton’s equations</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/02/12/analytical-mechanics/" title="分析力学基础"><img src="/img/%E4%BB%99%E5%A2%831.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="分析力学基础"/></a><div class="content"><a class="title" href="/2025/02/12/analytical-mechanics/" title="分析力学基础">分析力学基础</a><time datetime="2025-02-12T03:17:08.000Z" title="发表于 2025-02-12 11:17:08">2025-02-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/25/dc-experiment/" title="电路与电子技术实验Ⅰ"><img src="/img/%E4%BB%99%E5%A2%831.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="电路与电子技术实验Ⅰ"/></a><div class="content"><a class="title" href="/2024/12/25/dc-experiment/" title="电路与电子技术实验Ⅰ">电路与电子技术实验Ⅰ</a><time datetime="2024-12-25T08:33:04.000Z" title="发表于 2024-12-25 16:33:04">2024-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/08/robot/" title="机械臂动力学"><img src="/img/bridge.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机械臂动力学"/></a><div class="content"><a class="title" href="/2024/12/08/robot/" title="机械臂动力学">机械臂动力学</a><time datetime="2024-12-08T10:52:48.000Z" title="发表于 2024-12-08 18:52:48">2024-12-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/28/Circuit/" title="模电"><img src="/img/bridge.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="模电"/></a><div class="content"><a class="title" href="/2024/11/28/Circuit/" title="模电">模电</a><time datetime="2024-11-28T15:16:13.000Z" title="发表于 2024-11-28 23:16:13">2024-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/27/MATLAB%E7%AC%94%E8%AE%B0/" title="MATLAB笔记"><img src="/img/%E4%BB%99%E5%A2%831.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MATLAB笔记"/></a><div class="content"><a class="title" href="/2024/08/27/MATLAB%E7%AC%94%E8%AE%B0/" title="MATLAB笔记">MATLAB笔记</a><time datetime="2024-08-27T06:50:04.000Z" title="发表于 2024-08-27 14:50:04">2024-08-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/%E4%BB%99%E5%A2%831.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Hamilton2718</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Aimed to correct old time and regulate the sun</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
